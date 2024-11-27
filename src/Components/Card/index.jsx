@@ -37,7 +37,7 @@ const Card = ({ title, img, price, id, iconOnClick }) => {
                 <div onClick={handleChangeAmount}>
                     <Icon name="minus" size="sm" />
                 </div>
-                <Input onBlur={() => handleChangeAmount(amount)} type="number" value={amount} onChange={setAmount} />
+                <Input type="number" value={amount} onChange={setAmount} />
                 <div onClick={() => handleChangeAmount('ADD')}>
                     <Icon name="add" size="sm" />
                 </div>

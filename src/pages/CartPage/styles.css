@@ -1,0 +1,10 @@
+
+
+.cart-input {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    input {
+        width: 20px;
+    }
+}

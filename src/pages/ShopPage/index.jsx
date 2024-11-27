@@ -8,7 +8,7 @@ import { CartContext } from "../../context/cartContext";
 
 const ShopPage = () => {
     const {products, getProducts} = useContext(ProductContext)
-    const {handleAddToCart}= useContext(CartContext)
+    const {handleAddToCard}= useContext(CartContext)
 
     useEffect(() => {
         getProducts()
@@ -25,7 +25,7 @@ const ShopPage = () => {
                         price={price}
                         img={img}
                         id={id}
-                        iconOnClick={(amount) => handleAddToCart({title,price,img,amount})}
+                        iconOnClick={(amount) => handleAddToCard({title, price, img, id, amount})}
                     />
                 })}
             </div>

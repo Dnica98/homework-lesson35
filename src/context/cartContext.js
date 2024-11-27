@@ -22,10 +22,13 @@ export const CartProvider = ({ children }) => {
                 })
             })
         } else {
-            setCartList([...cartList, { ...newItem, amount: 1 }])
+            setCartList([...cartList, { ...newItem}])
         }
+
+      
     }
 
+    
     const modifyCartList = (modifiedItem) => {
         setCartList((prevState) => {
             return prevState.map((item) => {
@@ -41,7 +44,7 @@ export const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ cartList, handleAddToCard, deleteItem, modifyCartList }}>
+        <CartContext.Provider value={{ cartList, handleAddToCard, deleteItem, modifyCartList}}>
             {children}
         </CartContext.Provider>
     )
