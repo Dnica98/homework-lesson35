@@ -42,7 +42,7 @@ const CartPage =() => {
                         <Icon name="add" size="sm" />
                             </div>
                          </div>
-                        <button onClick={() => deleteItem(product.id)}>Remove</button>
+                        <button onClick={() => deleteItem(product.id)} className="removeBtn">Remove</button>
                     </li>
                     
                 )
