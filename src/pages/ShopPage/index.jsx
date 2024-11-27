@@ -1,12 +1,14 @@
 import { useContext, useEffect } from "react";
-import Cart from '../../Components/Cart';
+import Card from '../../Components/Card';
 import Typography from '../../Components/Typography';
 
 import './styles.css'
 import { ProductContext } from "../../context/productContext";
+import { CartContext } from "../../context/cartContext";
 
 const ShopPage = () => {
     const {products, getProducts} = useContext(ProductContext)
+    const {handleAddToCart}= useContext(CartContext)
 
     useEffect(() => {
         getProducts()
@@ -17,12 +19,13 @@ const ShopPage = () => {
             <Typography>Shop</Typography>
             <div className="product-list">
                 {products.map(({ title, price, img, id }) => {
-                    return <Cart
+                    return <Card
                         key={title}
                         title={title}
                         price={price}
                         img={img}
                         id={id}
+                        iconOnClick={(amount) => handleAddToCart({title,price,img,amount})}
                     />
                 })}
             </div>
