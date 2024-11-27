@@ -29,7 +29,8 @@ const CartPage =() => {
                 const price = product.amount * Number(product.price)
                 return (
                     <li key={product.id} >
-                        {product.title} amount: {product.amount} price: {price.toFixed(2)}
+                        
+                        {product.title} price: {price.toFixed(2)}
                         <div onClick={(e) => e.stopPropagation()} className="cart-input">
                         <div onClick={() => handleChangeAmount(product, 'MINUS')}>
                              <Icon name="minus" size="sm" />
